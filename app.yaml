@@ -7,10 +7,21 @@ handlers:
   static_files: dist/index.html
   upload: dist/index.html
 
-- url: /(.*)
+# - url: /(.*)/
+#   static_files: dist/\1/index.html
+#   upload: dist/(.*)
+
+- url: /(.*\.(js|css))$
   static_files: dist/\1
-  upload: dist/(.*)
+  upload: dist/.*\.(js|css)$
+
+- url: /.*
+  static_files: dist/index.html
+  upload: dist/index.html
   
 skip_files:
 - node_modules/
 - src/
+- .gitignore
+- public/
+- babel.config.js

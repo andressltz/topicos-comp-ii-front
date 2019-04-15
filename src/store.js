@@ -40,7 +40,7 @@ function request(endpoint, dados, metodo='POST') {
     delete options.body
   }
 
-  return fetch('http://localhost:8181' + endpoint, options).then(res => res.json())
+  return fetch('http://topicos-feevale-ii.appspot.com' + endpoint, options).then(res => res.json())
 }
 
 export default new Vuex.Store({

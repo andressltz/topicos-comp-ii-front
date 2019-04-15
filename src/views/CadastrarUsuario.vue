@@ -5,6 +5,7 @@
     <form class="login" @submit.prevent="cadastrarUsuario">
       <input-box texto="E-mail" tipo="email" v-model="email" />
       <input-box texto="Nome" tipo="text" v-model="nome" />
+      <input-box texto="Senha" tipo="password" v-model="senha" />
 
       <error-box v-if="erros.length" :erros="erros" />
 
@@ -36,6 +37,7 @@ export default {
     return {
       nome: '',
       email: '',
+      senha: '',
       erros: [],
       exibirModalSucesso: false
     }
@@ -47,7 +49,8 @@ export default {
     cadastrarUsuario() {
       const dados = {
         name: this.nome,
-        email: this.email
+        email: this.email,
+        password: this.senha
       }
 
       this.criarUsuario(dados)

@@ -1,6 +1,6 @@
 <template>
   <div id="container">
-    <h1>Meu perfil</h1>
+    <h1>Meu perfil - alterado</h1>
 
     <p v-if="dados.name === ''">Carregando dados...</p>
     <form v-else class="login" @submit.prevent="atualizarPerfil">
